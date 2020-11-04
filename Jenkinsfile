@@ -1,16 +1,18 @@
+#!/usr/bin/env groovy
 pipeline {
   agent any
-    
   tools {nodejs "NodeJS"}
-    
   stages {
-                
-    stage('Build') {
+    stage('preflight') {
       steps {
-        sh 'npm install'
-        echo 'build done'
+        sh 'node -v'
       }
     }
-          
+    stage('build') {
+      steps {
+        sh 'npm --version'
+        sh 'npm install'
+      }
+    }
   }
 }
