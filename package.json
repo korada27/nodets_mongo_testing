@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon ./lib/server.ts",
-    "start": "nodemon ./dist/server.js",
+    "start": "node ./dist/server.js",
     "prod": "npm run build && npm run start",
     "test": "mocha -r ts-node/register test/*.spec.ts --timeout 10000",
     "coverage": "nyc npm test report --reporter html --reporter text -t coverage --report-dir coverage/summary"
