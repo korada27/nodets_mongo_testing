@@ -3,7 +3,7 @@ process.env.NODE_ENV = 'test';
 import app from "../lib/app";
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import * as conn from '../lib/db/index';
+import * as conn from '../lib/db';
 var request = require('supertest');
 
 chai.use(chaiHttp);
