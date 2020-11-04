@@ -39,7 +39,6 @@
     "nyc": "^15.1.0",
     "supertest": "^5.0.0",
     "ts-node-dev": "^1.0.0"
-    
   },
   "nyc": {
     "include": "lib",
