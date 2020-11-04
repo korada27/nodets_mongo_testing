@@ -1,17 +1,26 @@
-#!/usr/bin/env groovy
 pipeline {
   agent any
-  tools {nodejs "NodeJS"}
+    
+  tools {nodejs "node"}
+    
   stages {
-    stage('preflight') {
+        
+    stage('Git') {
       steps {
-        sh 'node -v'
+        git 'https://github.com/korada27/nodets_mongo_testing.git'
       }
     }
-    stage('build') {
+     
+    stage('Build') {
       steps {
-        sh 'npm --version'
         sh 'npm install'
+      }
+    }  
+    
+            
+    stage('Test') {
+      steps {
+        sh 'node test'
       }
     }
   }
