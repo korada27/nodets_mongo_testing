@@ -23,7 +23,8 @@
     "mockgoose": "^8.0.4",
     "mongoose": "^5.10.9",
     "nodemon": "^2.0.6",
-    "response-time": "^2.3.2"
+    "response-time": "^2.3.2",
+    "typescript": "^4.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -37,8 +38,8 @@
     "mocha": "^8.2.0",
     "nyc": "^15.1.0",
     "supertest": "^5.0.0",
-    "ts-node-dev": "^1.0.0",
-    "typescript": "^4.0.3"
+    "ts-node-dev": "^1.0.0"
+    
   },
   "nyc": {
     "include": "lib",
