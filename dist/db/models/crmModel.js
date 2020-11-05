@@ -20,9 +20,19 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContactSchema = void 0;
+exports.ContactSchema = exports.addressSchema = void 0;
 const mongoose = __importStar(require("mongoose"));
 const Schema = mongoose.Schema;
+exports.addressSchema = new Schema({
+    addressId: {
+        type: Number,
+        index: true,
+        unique: true
+    },
+    city: { type: String },
+    state: { type: String },
+    _id: false
+});
 exports.ContactSchema = new Schema({
     firstName: {
         type: String,
@@ -39,15 +49,12 @@ exports.ContactSchema = new Schema({
         unique: true,
         required: true,
     },
-    company: {
-        type: String
-    },
-    phone: {
-        type: Number
-    },
+    company: { type: String },
+    phone: { type: Number },
     created_date: {
         type: Date,
         default: Date.now
-    }
+    },
+    address: [exports.addressSchema]
 });
 //# sourceMappingURL=crmModel.js.map

@@ -49,6 +49,7 @@ class ContactController {
     getAllContacts(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             let allContacts = yield Contact.find({});
+            console.log("Hello");
             res.send(allContacts);
         });
     }
@@ -59,6 +60,19 @@ class ContactController {
                 res.send(err);
             }
             res.json(contact);
+        });
+    }
+    addAddress(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log(req.params.contactId);
+            console.log(req.body);
+            try {
+                let addressAdd = yield Contact.update({ _id: req.params.contactId }, { $addToSet: { address: [req.body] } });
+                res.send(addressAdd);
+            }
+            catch (err) {
+                res.send(err);
+            }
         });
     }
 }

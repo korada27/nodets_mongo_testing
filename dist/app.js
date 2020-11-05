@@ -26,6 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const bodyParser = __importStar(require("body-parser"));
 const crmRoutes_1 = require("./routes/crmRoutes");
+const response_time_1 = __importDefault(require("response-time"));
 class App {
     constructor() {
         this.app = express_1.default();
@@ -36,6 +37,7 @@ class App {
     config() {
         // support application/json type post data
         this.app.use(bodyParser.json());
+        this.app.use(response_time_1.default());
         //support application/x-www-form-urlencoded post data
         this.app.use(bodyParser.urlencoded({ extended: false }));
     }

@@ -26,19 +26,18 @@ const Validate = __importStar(require("../utilities/validators/contactValidator"
 var contactController = new crmController_1.ContactController();
 class Routes {
     routes(app) {
+        // Smaple Hello world
         app.route('/')
             .get((req, res) => {
             res.status(200).send({
                 message: 'Hello World'
             });
         });
-        // Contact
+        // Create or Get Contacts
         app.route('/contact')
-            // GET endpoint
             .get(contactController.getAllContacts)
-            // POST endpoint
             .post(Validate.AddSchema, contactController.addNewContact);
-        // get a specific contact
+        // Specific Contact Editing/Manipulating
         app.route('/contact/:contactId')
             .get(contactController.getContactWithID)
             .put((req, res) => {
@@ -53,6 +52,9 @@ class Routes {
                 message: 'DELETE request successfulll!!!!'
             });
         });
+        //Add Address to Contacts 
+        app.route('/contact/address/:contactId')
+            .post(contactController.addAddress);
     }
 }
 exports.Routes = Routes;
