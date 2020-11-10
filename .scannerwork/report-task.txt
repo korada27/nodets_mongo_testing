@@ -2,5 +2,5 @@ projectKey=node-demo
 serverUrl=http://localhost:9000
 serverVersion=7.9.4.35981
 dashboardUrl=http://localhost:9000/dashboard?id=node-demo
-ceTaskId=AXWTxelC-n18SeVytrxQ
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXWTxelC-n18SeVytrxQ
+ceTaskId=AXWXooF4Vklpq10Fi57w
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXWXooF4Vklpq10Fi57w

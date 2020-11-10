@@ -2,6 +2,7 @@
   "name": "node_crud",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -9,8 +10,9 @@
     "start": "node ./dist/server.js",
     "prod": "npm run build && npm run start",
     "sonar-scanner": "sonar-scanner",
-    "test": "mocha -r ts-node/register test/*.spec.ts --timeout 10000",
-    "coverage": "nyc npm test report --reporter=text --reporter=lcov"
+    "test": "mocha test/*.spec.ts",
+    "report": "mocha-junit-reporter",
+    "coverage": "nyc npm test report --reporter=text --reporter=lcov --reporter mocha-junit-reporter && npm run sonar-scanner"
   },
   "author": "",
   "license": "ISC",

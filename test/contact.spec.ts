@@ -11,17 +11,17 @@ chai.use(chaiHttp);
 
 
 describe('Contact Testing', function () {
-    // beforeEach((done) => {
-    //     conn.connect()
-    //       .then(() => done())
-    //       .catch((err) => done(err));
-    // })
+    before((done) => {
+        conn.connect()
+          .then(() => done())
+          .catch((err) => done(err));
+    })
     
-    // afterEach((done) => {
-    //     conn.close()
-    //       .then(() => done())
-    //       .catch((err) => done(err));
-    //   })
+    after((done) => {
+        conn.close()
+          .then(() => done())
+          .catch((err) => done(err));
+      })
 
     it("Get Contact", function (done) {
         request(app)
