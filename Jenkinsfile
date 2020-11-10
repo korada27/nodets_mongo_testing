@@ -3,7 +3,7 @@ pipeline {
     tools {nodejs "node"}
     stages {
         stage('Git') {
-            steps {
+            steps { 
               git 'https://github.com/korada27/nodets_mongo_testing.git'
               }
            }
